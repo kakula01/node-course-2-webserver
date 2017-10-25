@@ -23,7 +23,6 @@ app.use((req, res, next)=>{
 });
 app.use((req,res,next)=>{
 	res.render('maintanance.hbs');
-	next();
 });
 
 hbs.registerHelper('getCurrentYear', ()=>{
@@ -45,6 +44,9 @@ app.get('/about', (req,res)=>{
 		pageTitle:'New About page'
 	});
 });
+app.get('/project',(req,res)=>{
+	res.render(project.hbs)
+})
 
 app.get('/bad', (req, res)=>{
 	res.send({
